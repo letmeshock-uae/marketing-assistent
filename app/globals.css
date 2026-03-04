@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+:root {
+  --datum-yellow: #f5c518;
+  --datum-dark: #0a0a0a;
+  --datum-gray: #1a1a1a;
+  --datum-light-gray: #2a2a2a;
+  --datum-text: #e5e5e5;
+  --datum-text-muted: #999999;
+}
+
+body {
+  background: var(--datum-dark);
+  color: var(--datum-text);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--datum-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--datum-light-gray);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
+
+/* Markdown content styling */
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3 {
+  font-weight: 700;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  color: #fff;
+}
+.markdown-content h1 { font-size: 1.5em; }
+.markdown-content h2 { font-size: 1.25em; }
+.markdown-content h3 { font-size: 1.1em; }
+
+.markdown-content p {
+  margin-bottom: 0.75em;
+  line-height: 1.7;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+  margin-left: 1.5em;
+  margin-bottom: 0.75em;
+}
+
+.markdown-content li {
+  margin-bottom: 0.25em;
+  line-height: 1.6;
+}
+
+.markdown-content ul { list-style-type: disc; }
+.markdown-content ol { list-style-type: decimal; }
+
+.markdown-content strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.markdown-content code {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.markdown-content pre {
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 1em;
+  overflow-x: auto;
+  margin-bottom: 0.75em;
+}
+
+.markdown-content pre code {
+  background: none;
+  padding: 0;
+}
+
+.markdown-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1em;
+  font-size: 0.9em;
+}
+
+.markdown-content th,
+.markdown-content td {
+  border: 1px solid #333;
+  padding: 0.5em 0.75em;
+  text-align: left;
+}
+
+.markdown-content th {
+  background: rgba(245, 197, 24, 0.1);
+  color: var(--datum-yellow);
+  font-weight: 600;
+}
+
+.markdown-content blockquote {
+  border-left: 3px solid var(--datum-yellow);
+  padding-left: 1em;
+  margin: 0.75em 0;
+  color: var(--datum-text-muted);
+  font-style: italic;
+}
+
+.markdown-content a {
+  color: var(--datum-yellow);
+  text-decoration: underline;
+}
+
+.markdown-content hr {
+  border: none;
+  border-top: 1px solid #333;
+  margin: 1.5em 0;
+}
+
+/* Typing animation */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.typing-cursor::after {
+  content: "▊";
+  animation: blink 1s infinite;
+  color: var(--datum-yellow);
+  margin-left: 2px;
+}
